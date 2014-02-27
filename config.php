@@ -22,10 +22,10 @@
 	// and store them locally
 	'connections' => array(
 		'production' => array(
-			'host'      => '192.168.50.4',
-			'username'  => 'vagrant',
-			'password'  => 'vagrant',
-			'key'       => '',
+			'host'      => 'remote_host',
+			'username'  => 'remote_username',
+			'password'  => '',
+			'key'       => '/Users/{{local_username}}/.ssh/id_rsa',
 			'keyphrase' => '',
 		),
 	),
@@ -58,12 +58,12 @@
 	),
 
 	'local' => array(
-		'domain_name' => 'wpsite.dev',
+		'domain_name' => 'wctest1.dev',
 		'db' => array(
 			'host' 		=> 'localhost',
 			'user' 		=> 'root',
 			'password' 	=> 'password',
-			'name' 		=> 'wpsite',
+			'name' 		=> 'wctest1',
 		),
 		'mysql_path' => '/Applications/MAMP/Library/bin/' // Optional.  May need supply a path in the event you use something like MAMP - EX: /Applications/MAMP/Library/bin/
 	),

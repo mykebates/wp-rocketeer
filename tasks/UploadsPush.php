@@ -20,12 +20,12 @@ class UploadsPush extends Rocketeer\Traits\Task
         exec('rsync --update -avzhLK --progress '.$content_dir.'/uploads '.$remote_login_user.'@'.$remote_login_host.':'.$root_directory.'/'.$content_dir.'/'); // send to server
 
         $this->command->info('Updating permissions');
-        
+
         // Hope to find a way around not using sudo here, but when syncing the files up it is important to not get any of the file owndership residue
         $this->remote->run(array(
             'cd '.$root_directory.'/'.$content_dir,
-            'sudo chown -R '.$remote_login_user.':www-data uploads',
-            'sudo chmod g+w uploads -R'
+            'chown -R '.$remote_login_user.':www-data uploads',
+            //'chmod g+w uploads -R'
         ));
 
         $this->command->info('Complete');
