@@ -13,20 +13,20 @@
 	// The root directory where your applications will be deployed
 	'root_directory'   => '/var/www/',
 	'wp_content_director' => 'content', // relative to site root
-	'domain_name' => 'v.wpsite.dev',
+	'domain_name' => 'wcstl.elemenopea.com',
 
 	// DB connection details used for pull/push as well ad wp-config generation
 	'db' => array(
 		'host' => 'localhost',
 		'user' => 'root',
 		'password' => 'password',
-		'name' => 'wpsite',
+		'name' => 'wcstl',
 	),
 
 	// The name of the application to deploy
 	// This will create a folder of the same name in the root directory
 	// configured above, so be careful about the characters used
-	'application_name' => 'wpsite',
+	'application_name' => 'wcstl',
 
 	// The number of releases to keep at all times
 	'keep_releases'    => 4,
@@ -53,8 +53,8 @@
 		// a single command as a string or an array of commands
 		'callback' => function ($task, $file) {
 			return array(
-				sprintf('chmod -R 755 %s', $file),
-				sprintf('chmod -R g+s %s', $file),
+				sprintf('chown -R www-data:www-data %s', $file),
+				sprintf('chmod -R g+w %s', $file),
 			);
 		},
 

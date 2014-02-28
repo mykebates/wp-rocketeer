@@ -16,7 +16,7 @@ class UploadsPull extends Rocketeer\Traits\Task
         // Run locally
         // might still need to do some checking here to see if directoris exist before running
         $this->command->info('Pulling uploads');
-        exec('rsync -avzhk '.$remote_login_user.'@'.$remote_login_host.':'.$root_directory.'/current/'.$content_dir.'/uploads '.$content_dir.'/');
+        exec('rsync -avzhkO '.$remote_login_user.'@'.$remote_login_host.':'.$root_directory.'/current/'.$content_dir.'/uploads '.$content_dir.'/');
     }
 }
 ?>

@@ -6,11 +6,13 @@ class Permissions extends Rocketeer\Traits\Task
   public function execute()
   {
   	$remote_login_user = $this->rocketeer->getOption('config.connections.'.$stage.'.username');
+  	$root_directory = $this->rocketeer->getHomeFolder().'/'.$this->rocketeer->getStage().'/current';
+    $content_dir = $this->rocketeer->getOption('remote.wp_content_director');
 
     $this->command->info('Setting Permissions');
-    $this->runForCurrentRelease('chown -R '.$remote_login_user.':www-data ./');
-    $this->runForCurrentRelease('chmod g+w ./ -R');
-    $this->runForCurrentRelease('chown -R '.$remote_login_user.':www-data ../../shared');
+    // Setting up this space for potentially greater permissions handling
+    //$this->runForCurrentRelease('chown -R www-data:www-data ../../shared/content/uploads');
+
   }
 }
 ?>

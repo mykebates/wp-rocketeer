@@ -23,7 +23,8 @@
 	'after' => array(
 		'setup'   => array(),
 		'deploy'  => array(
-			'Permissions'
+			'Permissions',
+			'WPConfig'
 		),
 		'cleanup' => array(),
 	),

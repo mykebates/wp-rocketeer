@@ -22,10 +22,10 @@
 	// and store them locally
 	'connections' => array(
 		'production' => array(
-			'host'      => 'remote_host',
-			'username'  => 'remote_username',
+			'host'      => 'wcstl.elemenopea.com',
+			'username'  => 'root',
 			'password'  => '',
-			'key'       => '/Users/{{local_username}}/.ssh/id_rsa',
+			'key'       => '/Users/myke/.ssh/id_rsa',
 			'keyphrase' => '',
 		),
 	),
@@ -58,12 +58,12 @@
 	),
 
 	'local' => array(
-		'domain_name' => 'wctest1.dev',
+		'domain_name' => 'wcstl.dev',
 		'db' => array(
 			'host' 		=> 'localhost',
 			'user' 		=> 'root',
 			'password' 	=> 'password',
-			'name' 		=> 'wctest1',
+			'name' 		=> 'wcstl',
 		),
 		'mysql_path' => '/Applications/MAMP/Library/bin/' // Optional.  May need supply a path in the event you use something like MAMP - EX: /Applications/MAMP/Library/bin/
 	),
