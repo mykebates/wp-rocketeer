@@ -15,11 +15,15 @@ class RestorePlugins extends Rocketeer\Traits\Task
 
         $this->command->info('Restoring plugins to current release');
 
+        $currentRelease = $this->releasesManager->getCurrentRelease();
+        $currentReleasePath = $this->releasesManager->getPathToRelease($currentRelease);
+
         if($this->fileExists($backup_directory))
         {   
             $this->remote->run(array(
-                'cd '.$root_directory,
-                'cp -rf '.$backup_directory.'/* '.$content_dir.'/plugins'
+                'cd '.$currentReleasePath,
+                'cp -rf '.$backup_directory.'/* '.$content_dir.'/plugins',
+                'chown www-data:www-data '.$content_dir.'/plugins -R'
             ));
         }
         
