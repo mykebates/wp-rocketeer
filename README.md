@@ -1,6 +1,6 @@
 # Important!
 
-This is a raw-ass file I used for my private use at WCSTL and still needs some TLC.  Opening up for anyone who might be eager enough to uset his as a starting point.
+This is a raw-ass file I used for my private use at WCSTL and still needs some TLC.  Opening up for anyone who might be eager enough to use this as a starting point.
 
 *Eventually* I will circle back and edit the tight coupling specific to what I was working with :)
 
